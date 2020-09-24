@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import TodoListItem from './TodoListItem';
 import './TodoList.scss';
 
-const TodoList = ({ todos, onRemove }) => {
+const TodoList = ({ todos, onRemove, onToggle }) => {
   const box = useRef(null);
 
   const scrollToBottom = () => {
@@ -15,7 +15,12 @@ const TodoList = ({ todos, onRemove }) => {
   return (
     <div className="TodoList" ref={box}>
       {todos.map((todo) => (
-        <TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
+        <TodoListItem
+          todo={todo}
+          key={todo.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
