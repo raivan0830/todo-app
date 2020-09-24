@@ -3,17 +3,17 @@ import TodoListItem from './TodoListItem';
 import './TodoList.scss';
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
-  const box = useRef(null);
+  // const box = useRef(null);
 
-  const scrollToBottom = () => {
-    const { clientHeight, scrollHeight } = box.current;
-    box.current.scrollTop = scrollHeight - clientHeight;
-  };
+  // const scrollToBottom = () => {
+  //   const { clientHeight, scrollHeight } = box.current;
+  //   box.current.scrollTop = scrollHeight - clientHeight;
+  // };
 
-  useEffect(scrollToBottom, [todos]);
+  // useEffect(scrollToBottom, [todos]);
 
   return (
-    <div className="TodoList" ref={box}>
+    <div className="TodoList">
       {todos.map((todo) => (
         <TodoListItem
           todo={todo}
